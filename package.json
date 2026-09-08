@@ -1,6 +1,6 @@
 {
   "name": "@farzadbagheri/fb-components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Production-minded React components for motion, AI interfaces, data visualization and modern product experiences.",
   "license": "MIT",
   "author": {
@@ -109,14 +109,12 @@
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run typecheck && npm run build",
-	
-	"package:size": "node scripts/check-package-size.mjs",
-	"install-test": "node scripts/install-test.mjs",
-  
-	"release:check": "npm run typecheck && npm run build && npm pack --dry-run",
-	"release:patch": "npm run release:check && npm version patch",
-	"release:minor": "npm run release:check && npm version minor",
-	"release:major": "npm run release:check && npm version major"
+    "package:size": "node scripts/check-package-size.mjs",
+    "install-test": "node scripts/install-test.mjs",
+    "release:check": "npm run typecheck && npm run build && npm pack --dry-run",
+    "release:patch": "npm run release:check && npm version patch",
+    "release:minor": "npm run release:check && npm version minor",
+    "release:major": "npm run release:check && npm version major"
   },
   "peerDependencies": {
     "react": ">=18 <20",
