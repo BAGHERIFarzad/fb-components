@@ -108,7 +108,15 @@
     "dev": "tsup --watch",
     "clean": "rimraf dist",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "npm run typecheck && npm run build"
+    "prepublishOnly": "npm run typecheck && npm run build",
+	
+	"package:size": "node scripts/check-package-size.mjs",
+	"install-test": "node scripts/install-test.mjs",
+  
+	"release:check": "npm run typecheck && npm run build && npm pack --dry-run",
+	"release:patch": "npm run release:check && npm version patch",
+	"release:minor": "npm run release:check && npm version minor",
+	"release:major": "npm run release:check && npm version major"
   },
   "peerDependencies": {
     "react": ">=18 <20",
