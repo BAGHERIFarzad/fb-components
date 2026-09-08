@@ -1,0 +1,32 @@
+.fb-glow-cursor {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.fb-glow-cursor__glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  pointer-events: none;
+
+  transition-property:
+    left,
+    top;
+
+  transition-timing-function:
+    ease-out;
+}
+
+.fb-glow-cursor__content {
+  position: relative;
+
+  z-index: 2;
+}

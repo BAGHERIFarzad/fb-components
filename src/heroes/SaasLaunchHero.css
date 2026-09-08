@@ -1,0 +1,447 @@
+.fb-saas-launch-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100%;
+
+  overflow: hidden;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(260px, 0.95fr);
+
+  align-items: center;
+
+  gap: 50px;
+
+  padding:
+    clamp(
+      35px,
+      7vw,
+      90px
+    );
+
+  color: white;
+}
+
+.fb-saas-launch-hero__glow {
+  position: absolute;
+
+  right: -8%;
+  top: -25%;
+
+  width: 55%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  background:
+    var(
+      --fb-saas-accent
+    );
+
+  opacity: 0.16;
+
+  filter: blur(85px);
+
+  animation:
+    fbSaasGlow
+    7s
+    ease-in-out
+    infinite alternate;
+}
+
+.fb-saas-launch-hero__content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.fb-saas-launch-hero__eyebrow {
+  display: block;
+
+  color:
+    var(
+      --fb-saas-accent
+    );
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+}
+
+.fb-saas-launch-hero h2 {
+  margin:
+    20px
+    0
+    0;
+
+  font-size:
+    clamp(
+      42px,
+      7vw,
+      var(
+        --fb-saas-headline-size
+      )
+    );
+
+  font-weight: 550;
+
+  line-height: 0.89;
+
+  letter-spacing: -0.06em;
+}
+
+.fb-saas-launch-hero h2
+span {
+  display: block;
+}
+
+.fb-saas-launch-hero__content
+> p {
+  max-width: 580px;
+
+  margin:
+    24px
+    0
+    0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.fb-saas-launch-hero__actions {
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.fb-saas-launch-hero__actions
+button {
+  padding:
+    13px
+    20px;
+
+  border-radius: 999px;
+
+  font: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition:
+    transform
+    0.2s
+    ease;
+}
+
+.fb-saas-launch-hero__actions
+button:hover {
+  transform:
+    translateY(-2px);
+}
+
+.fb-saas-launch-hero__primary {
+  border: 0;
+
+  background: white;
+
+  color: #08080b;
+}
+
+.fb-saas-launch-hero__secondary {
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.035
+    );
+
+  color: white;
+}
+
+.fb-saas-launch-hero__proof {
+  margin-top: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+.fb-saas-launch-hero__proof
+> div {
+  display: flex;
+}
+
+.fb-saas-launch-hero__proof
+> div
+span {
+  width: 25px;
+  height: 25px;
+
+  margin-left: -6px;
+
+  border:
+    2px solid
+    #09090d;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(
+        --fb-saas-accent
+      ),
+      #d6cbff
+    );
+}
+
+.fb-saas-launch-hero__proof
+> div
+span:first-child {
+  margin-left: 0;
+}
+
+.fb-saas-launch-hero__proof
+p {
+  margin: 0;
+
+  max-width: 220px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+
+  font-size: 9px;
+
+  line-height: 1.5;
+}
+
+.fb-saas-launch-hero__visual {
+  position: relative;
+
+  z-index: 2;
+
+  min-height: 330px;
+
+  padding: 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.055
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.015
+      )
+    );
+
+  box-shadow:
+    inset
+    0
+    1px
+    0
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+.fb-saas-launch-hero__visual-card
+span {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 8px;
+}
+
+.fb-saas-launch-hero__visual-card
+strong {
+  display: block;
+
+  margin-top: 8px;
+
+  font-size: 38px;
+
+  letter-spacing: -0.05em;
+}
+
+.fb-saas-launch-hero__visual-card
+small {
+  display: inline-block;
+
+  margin-top: 6px;
+
+  color: #79e3a9;
+}
+
+.fb-saas-launch-hero__bars {
+  height: 120px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 8px;
+}
+
+.fb-saas-launch-hero__bars
+span {
+  flex: 1;
+
+  border-radius:
+    5px
+    5px
+    2px
+    2px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(
+        --fb-saas-accent
+      ),
+      rgba(
+        143,
+        115,
+        255,
+        0.14
+      )
+    );
+
+  animation:
+    fbSaasBar
+    2.8s
+    ease-in-out
+    infinite alternate;
+}
+
+.fb-saas-launch-hero__bars
+span:nth-child(even) {
+  animation-delay:
+    -1.2s;
+}
+
+@keyframes fbSaasGlow {
+  to {
+    transform:
+      translate3d(
+        -35px,
+        30px,
+        0
+      )
+      scale(1.15);
+  }
+}
+
+@keyframes fbSaasBar {
+  from {
+    opacity: 0.55;
+
+    transform:
+      scaleY(0.82);
+
+    transform-origin:
+      bottom;
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scaleY(1);
+  }
+}
+
+@media (
+  max-width:
+  760px
+) {
+  .fb-saas-launch-hero {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-saas-launch-hero * {
+    animation:
+      none !important;
+  }
+}

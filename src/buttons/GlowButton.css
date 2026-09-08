@@ -1,0 +1,119 @@
+.fb-glow-button {
+  position: relative;
+
+  isolation: isolate;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+  font-family: inherit;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    transform
+    0.2s
+    ease,
+    box-shadow
+    0.25s
+    ease;
+}
+
+.fb-glow-button:hover {
+  transform:
+    translateY(-2px)
+    scale(1.02);
+}
+
+.fb-glow-button:active {
+  transform:
+    translateY(0)
+    scale(0.99);
+}
+
+.fb-glow-button:focus-visible {
+  outline:
+    2px solid
+    var(
+      --fb-glow-button-color,
+      #9b7cff
+    );
+
+  outline-offset:
+    4px;
+}
+
+.fb-glow-button__content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.fb-glow-button__glow {
+  position: absolute;
+
+  z-index: 1;
+
+  inset: -25%;
+
+  border-radius: inherit;
+
+  background:
+    var(
+      --fb-glow-button-color,
+      #9b7cff
+    );
+
+  opacity: 0.16;
+
+  filter:
+    blur(18px);
+
+  animation:
+    fbGlowButtonPulse
+    2.5s
+    ease-in-out
+    infinite alternate;
+}
+
+@keyframes fbGlowButtonPulse {
+  from {
+    opacity:
+      0.08;
+
+    transform:
+      scale(0.85);
+  }
+
+  to {
+    opacity:
+      0.26;
+
+    transform:
+      scale(1.15);
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-glow-button,
+  .fb-glow-button__glow {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+}

@@ -1,0 +1,146 @@
+.fb-blur-reveal {
+  display: inline-block;
+
+  font-weight: 650;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.045em;
+
+  animation:
+    fbBlurReveal
+    var(
+      --fb-blur-reveal-duration,
+      0.8s
+    )
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    both;
+}
+
+.fb-blur-reveal--repeat {
+  animation:
+    fbBlurRevealRepeat
+    calc(
+      var(
+        --fb-blur-reveal-duration,
+        0.8s
+      ) * 3
+    )
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    infinite;
+}
+
+@keyframes fbBlurReveal {
+  from {
+    opacity: 0;
+
+    filter:
+      blur(
+        var(
+          --fb-blur-reveal-blur,
+          14px
+        )
+      );
+
+    transform:
+      translateY(
+        var(
+          --fb-blur-reveal-distance,
+          24px
+        )
+      );
+  }
+
+  to {
+    opacity: 1;
+
+    filter:
+      blur(0);
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes fbBlurRevealRepeat {
+  0% {
+    opacity: 0;
+
+    filter:
+      blur(
+        var(
+          --fb-blur-reveal-blur,
+          14px
+        )
+      );
+
+    transform:
+      translateY(
+        var(
+          --fb-blur-reveal-distance,
+          24px
+        )
+      );
+  }
+
+  28%,
+  72% {
+    opacity: 1;
+
+    filter:
+      blur(0);
+
+    transform:
+      translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+
+    filter:
+      blur(
+        calc(
+          var(
+            --fb-blur-reveal-blur,
+            14px
+          ) * 0.5
+        )
+      );
+
+    transform:
+      translateY(
+        calc(
+          var(
+            --fb-blur-reveal-distance,
+            24px
+          ) * -0.35
+        )
+      );
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-blur-reveal {
+    animation:
+      none !important;
+
+    opacity: 1;
+
+    filter: none;
+
+    transform: none;
+  }
+}

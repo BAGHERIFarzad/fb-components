@@ -1,0 +1,48 @@
+.fb-signal-particles {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.fb-signal-particles__particle {
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+.fb-signal-particles__particle--animated {
+  animation:
+    fbSignalParticle
+    3s
+    ease-in-out
+    infinite alternate;
+}
+
+@keyframes fbSignalParticle {
+  from {
+    opacity: 0.2;
+
+    transform:
+      scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1.2);
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-signal-particles__particle {
+    animation:
+      none !important;
+  }
+}

@@ -1,0 +1,74 @@
+.fb-animated-counter {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+.fb-animated-counter__label {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 9px;
+
+  letter-spacing: 1.7px;
+}
+
+.fb-animated-counter
+strong {
+  margin-top: 10px;
+
+  color: inherit;
+
+  font-size:
+    var(
+      --fb-counter-size,
+      72px
+    );
+
+  font-weight: 550;
+
+  line-height: 1;
+
+  letter-spacing: -0.065em;
+}
+
+.fb-animated-counter
+small {
+  margin-top: 12px;
+
+  padding:
+    5px
+    9px;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(
+        --fb-counter-accent
+      )
+      12%,
+      transparent
+    );
+
+  color:
+    var(
+      --fb-counter-accent
+    );
+
+  font-size: 9px;
+}

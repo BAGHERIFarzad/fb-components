@@ -1,0 +1,127 @@
+{
+  "name": "@farzadbagheri/fb-components",
+  "version": "0.1.0",
+  "description": "Production-minded React components for motion, AI interfaces, data visualization and modern product experiences.",
+  "license": "MIT",
+  "author": {
+    "name": "Farzad Bagheri"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./backgrounds": {
+      "types": "./dist/backgrounds.d.ts",
+      "import": "./dist/backgrounds.js",
+      "require": "./dist/backgrounds.cjs"
+    },
+    "./backgrounds.css": "./dist/backgrounds.css",
+    "./buttons": {
+      "types": "./dist/buttons.d.ts",
+      "import": "./dist/buttons.js",
+      "require": "./dist/buttons.cjs"
+    },
+    "./buttons.css": "./dist/buttons.css",
+    "./text": {
+      "types": "./dist/text.d.ts",
+      "import": "./dist/text.js",
+      "require": "./dist/text.cjs"
+    },
+    "./text.css": "./dist/text.css",
+    "./ui": {
+      "types": "./dist/ui.d.ts",
+      "import": "./dist/ui.js",
+      "require": "./dist/ui.cjs"
+    },
+    "./ui.css": "./dist/ui.css",
+    "./motion": {
+      "types": "./dist/motion.d.ts",
+      "import": "./dist/motion.js",
+      "require": "./dist/motion.cjs"
+    },
+    "./motion.css": "./dist/motion.css",
+    "./ai": {
+      "types": "./dist/ai.d.ts",
+      "import": "./dist/ai.js",
+      "require": "./dist/ai.cjs"
+    },
+    "./ai.css": "./dist/ai.css",
+    "./heroes": {
+      "types": "./dist/heroes.d.ts",
+      "import": "./dist/heroes.js",
+      "require": "./dist/heroes.cjs"
+    },
+    "./heroes.css": "./dist/heroes.css",
+    "./landing": {
+      "types": "./dist/landing.d.ts",
+      "import": "./dist/landing.js",
+      "require": "./dist/landing.cjs"
+    },
+    "./landing.css": "./dist/landing.css",
+    "./data": {
+      "types": "./dist/data.d.ts",
+      "import": "./dist/data.js",
+      "require": "./dist/data.cjs"
+    },
+    "./data.css": "./dist/data.css",
+    "./styles.css": "./dist/index.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "react",
+    "react-components",
+    "ui",
+    "ui-components",
+    "components",
+    "typescript",
+    "animation",
+    "motion",
+    "ai",
+    "ai-ui",
+    "dashboard",
+    "data-visualization",
+    "design-system",
+    "frontend"
+  ],
+  "homepage": "https://farzadbagheri.fr/en/components",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "rimraf": "^6.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  }
+}

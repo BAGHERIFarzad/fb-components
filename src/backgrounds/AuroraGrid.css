@@ -1,0 +1,100 @@
+.fb-aurora-grid {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.fb-aurora-grid__grid {
+  position: absolute;
+
+  inset: -35%;
+
+  transform:
+    perspective(600px)
+    rotateX(58deg)
+    scale(1.35);
+
+  transform-origin:
+    center bottom;
+}
+
+.fb-aurora-grid__grid--animated {
+  animation:
+    fbAuroraGridMove
+    8s
+    linear
+    infinite;
+}
+
+.fb-aurora-grid__glow {
+  position: absolute;
+
+  left: 50%;
+  bottom: -18%;
+
+  width: 58%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  opacity: 0.4;
+
+  transform:
+    translateX(-50%);
+}
+
+.fb-aurora-grid__glow--animated {
+  animation:
+    fbAuroraGlow
+    6s
+    ease-in-out
+    infinite alternate;
+}
+
+@keyframes fbAuroraGridMove {
+  from {
+    background-position:
+      0
+      0;
+  }
+
+  to {
+    background-position:
+      0
+      80px;
+  }
+}
+
+@keyframes fbAuroraGlow {
+  from {
+    transform:
+      translateX(-50%)
+      scale(0.9);
+
+    opacity:
+      0.28;
+  }
+
+  to {
+    transform:
+      translateX(-50%)
+      scale(1.15);
+
+    opacity:
+      0.5;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-aurora-grid__grid,
+  .fb-aurora-grid__glow {
+    animation:
+      none !important;
+  }
+}

@@ -1,0 +1,118 @@
+.fb-magnetic-cursor {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.fb-magnetic-cursor__content {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+}
+
+.fb-magnetic-cursor__ring,
+.fb-magnetic-cursor__dot {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 0;
+  top: 0;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  border-radius: 50%;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+}
+
+.fb-magnetic-cursor__ring {
+  border:
+    1px solid;
+
+  transition:
+    left
+    0.14s
+    ease-out,
+    top
+    0.14s
+    ease-out,
+    width
+    0.2s
+    ease,
+    height
+    0.2s
+    ease,
+    opacity
+    0.15s
+    ease,
+    transform
+    0.2s
+    ease;
+}
+
+.fb-magnetic-cursor__dot {
+  transition:
+    opacity
+    0.12s
+    ease;
+}
+
+.fb-magnetic-cursor__ring.is-visible,
+.fb-magnetic-cursor__dot.is-visible {
+  opacity: 1;
+}
+
+.fb-magnetic-cursor__ring.is-targeting {
+  transform:
+    translate(
+      -50%,
+      -50%
+    )
+    scale(1.35);
+
+  background:
+    rgba(
+      185,
+      156,
+      255,
+      0.08
+    );
+}
+
+@media (
+  pointer:
+  coarse
+) {
+  .fb-magnetic-cursor {
+    cursor: auto !important;
+  }
+
+  .fb-magnetic-cursor__ring,
+  .fb-magnetic-cursor__dot {
+    display: none;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-magnetic-cursor__ring,
+  .fb-magnetic-cursor__dot {
+    transition:
+      none !important;
+  }
+}

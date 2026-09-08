@@ -1,0 +1,150 @@
+.fb-predictive-arc {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background:
+    var(
+      --predictive-arc-background,
+      #0d0d11
+    );
+}
+
+.fb-predictive-arc__line {
+  position: absolute;
+
+  left: 50%;
+  top: 60%;
+
+  border-radius: 50%;
+
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-top:
+    var(
+      --predictive-arc-thickness,
+      3px
+    )
+    solid
+    var(
+      --predictive-arc-color,
+      #9b7cff
+    );
+
+  box-shadow:
+    0
+    0
+    var(
+      --predictive-arc-glow,
+      16px
+    )
+    var(
+      --predictive-arc-color,
+      #9b7cff
+    );
+}
+
+.fb-predictive-arc__line--outer {
+  width:
+    var(
+      --predictive-arc-size,
+      70%
+    );
+
+  height: 45%;
+}
+
+.fb-predictive-arc__line--inner {
+  width: 50%;
+  height: 32%;
+
+  opacity: 0.4;
+}
+
+.fb-predictive-arc__point {
+  position: absolute;
+
+  top: 60%;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background:
+    var(
+      --predictive-arc-color,
+      #9b7cff
+    );
+
+  box-shadow:
+    0
+    0
+    16px
+    var(
+      --predictive-arc-color,
+      #9b7cff
+    );
+}
+
+.fb-predictive-arc__point--left {
+  left: 20%;
+}
+
+.fb-predictive-arc__point--right {
+  right: 20%;
+}
+
+.fb-predictive-arc--animated
+.fb-predictive-arc__line--outer {
+  animation:
+    fbPredictiveArcPulse
+    2.8s
+    ease-in-out
+    infinite alternate;
+}
+
+@keyframes fbPredictiveArcPulse {
+  from {
+    opacity: 0.55;
+
+    transform:
+      translate(
+        -50%,
+        -50%
+      )
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translate(
+        -50%,
+        -50%
+      )
+      scale(1.02);
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-predictive-arc * {
+    animation:
+      none !important;
+  }
+}

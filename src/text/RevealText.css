@@ -1,0 +1,49 @@
+.fb-reveal-text {
+  display: inline-block;
+
+  font-weight: 650;
+
+  letter-spacing:
+    -0.05em;
+
+  animation:
+    fbRevealText
+    0.7s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    both;
+}
+
+@keyframes fbRevealText {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(
+        22px
+      );
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(
+        0
+      );
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-reveal-text {
+    animation:
+      none !important;
+  }
+}

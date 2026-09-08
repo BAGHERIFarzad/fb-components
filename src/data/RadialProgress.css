@@ -1,0 +1,153 @@
+.fb-radial-progress {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.fb-radial-progress
+svg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform:
+    rotate(-90deg);
+}
+
+.fb-radial-progress__value {
+  filter:
+    drop-shadow(
+      0
+      0
+      7px
+      color-mix(
+        in srgb,
+        var(
+          --fb-radial-color
+        )
+        55%,
+        transparent
+      )
+    );
+
+  transition:
+    stroke-dashoffset
+    0.7s
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+.fb-radial-progress__value--animated {
+  animation:
+    fbRadialAppear
+    0.65s
+    ease-out
+    both;
+}
+
+@keyframes fbRadialAppear {
+  from {
+    opacity:
+      0;
+  }
+
+  to {
+    opacity:
+      1;
+  }
+}
+
+.fb-radial-progress__content {
+  position: relative;
+
+  z-index: 1;
+
+  text-align: center;
+}
+
+.fb-radial-progress__content
+strong {
+  display: block;
+
+  color: white;
+
+  font-size: 38px;
+
+  line-height: 1;
+
+  letter-spacing: -0.06em;
+}
+
+.fb-radial-progress__content
+strong
+small {
+  font-size: 14px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+}
+
+.fb-radial-progress__content
+> span {
+  display: block;
+
+  margin-top: 6px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.32
+    );
+
+  font-family:
+    "DM Mono",
+    monospace;
+
+  font-size: 7px;
+
+  letter-spacing: 1.3px;
+}
+
+@keyframes fbRadialAppear {
+  from {
+    opacity: 0;
+
+    stroke-dashoffset:
+      999;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+  .fb-radial-progress__value {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+}
