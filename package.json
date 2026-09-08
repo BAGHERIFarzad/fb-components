@@ -6,6 +6,14 @@
   "author": {
     "name": "Farzad Bagheri"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BAGHERIFarzad/fb-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BAGHERIFarzad/fb-components/issues"
+  },
+  "homepage": "https://farzadbagheri.fr/en/components",
   "type": "module",
   "sideEffects": [
     "**/*.css"
@@ -81,7 +89,7 @@
     "LICENSE"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=18"
   },
   "keywords": [
     "react",
@@ -99,7 +107,6 @@
     "design-system",
     "frontend"
   ],
-  "homepage": "https://farzadbagheri.fr/en/components",
   "publishConfig": {
     "access": "public"
   },
@@ -111,7 +118,7 @@
     "prepublishOnly": "npm run typecheck && npm run build",
     "package:size": "node scripts/check-package-size.mjs",
     "install-test": "node scripts/install-test.mjs",
-    "release:check": "npm run typecheck && npm run build && npm pack --dry-run",
+    "release:check": "npm run typecheck && npm run build && npm run package:size && npm run install-test",
     "release:patch": "npm run release:check && npm version patch",
     "release:minor": "npm run release:check && npm version minor",
     "release:major": "npm run release:check && npm version major"
