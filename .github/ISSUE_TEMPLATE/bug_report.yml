@@ -1,0 +1,80 @@
+name: Bug report
+description: Report a reproducible problem with FB Components
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please provide enough detail for the issue to be reproduced.
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      placeholder: GlowButton / @farzadbagheri/fb-components/buttons
+    validations:
+      required: true
+  - type: input
+    id: package-version
+    attributes:
+      label: FB Components version
+      placeholder: 0.1.3
+    validations:
+      required: true
+  - type: input
+    id: react-version
+    attributes:
+      label: React version
+      placeholder: 19.x
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Vite
+        - React SPA
+        - Next.js
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional context
+      description: Screenshots, logs, browser/version information, or a minimal reproduction.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues before opening this report.
+          required: true
+        - label: I removed secrets, credentials, and private data from the report.
+          required: true

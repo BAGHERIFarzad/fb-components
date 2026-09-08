@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: FB Components documentation
+    url: https://farzadbagheri.fr/en/components
+    about: Check the component documentation and live previews.
+  - name: Security vulnerability
+    url: https://github.com/BAGHERIFarzad/fb-components/security
+    about: Use a private security reporting channel for sensitive vulnerabilities.
