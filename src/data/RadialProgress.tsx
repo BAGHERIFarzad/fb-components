@@ -18,6 +18,8 @@ export interface RadialProgressProps
 
   label?: string;
 
+  ariaLabel?: string;
+
   className?: string;
 }
 
@@ -32,8 +34,9 @@ export function RadialProgress({
 
   animated = true,
 
-  label =
-    "COMPLETE",
+  label = "COMPLETE",
+
+  ariaLabel = "Progress",
 
   className = "",
   style,
@@ -84,51 +87,36 @@ export function RadialProgress({
           color,
       }}
       role="progressbar"
+      aria-label={ariaLabel}
       aria-valuemin={0}
       aria-valuemax={100}
-      aria-valuenow={
-        clamped
-      }
+      aria-valuenow={clamped}
+      aria-valuetext={`${Math.round(clamped)}%`}
     >
       <svg
         viewBox="0 0 100 100"
         aria-hidden="true"
+        focusable="false"
       >
         <circle
           cx="50"
           cy="50"
-          r={
-            radius
-          }
+          r={radius}
           fill="none"
-          stroke={
-            trackColor
-          }
-          strokeWidth={
-            strokeWidth
-          }
+          stroke={trackColor}
+          strokeWidth={strokeWidth}
         />
 
         <circle
           cx="50"
           cy="50"
-          r={
-            radius
-          }
+          r={radius}
           fill="none"
-          stroke={
-            color
-          }
-          strokeWidth={
-            strokeWidth
-          }
+          stroke={color}
+          strokeWidth={strokeWidth}
           strokeLinecap="round"
-          strokeDasharray={
-            circumference
-          }
-          strokeDashoffset={
-            offset
-          }
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
           className={
             animated
               ? "fb-radial-progress__value fb-radial-progress__value--animated"
@@ -139,9 +127,7 @@ export function RadialProgress({
 
       <div className="fb-radial-progress__content">
         <strong>
-          {Math.round(
-            clamped
-          )}
+          {Math.round(clamped)}
           <small>
             %
           </small>
