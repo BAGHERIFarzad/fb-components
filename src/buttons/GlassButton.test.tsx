@@ -69,4 +69,29 @@ describe("GlassButton", () => {
 
     await expectNoAccessibilityViolations(container);
   });
+  
+  it("falls back to white when tint is not a six-digit hex color", () => {
+	  render(
+		<GlassButton
+		  tint="#fff"
+		  opacity={0.25}
+		>
+		  Invalid tint
+		</GlassButton>
+	  );
+
+	  const button =
+		screen.getByRole(
+		  "button",
+		  {
+			name: "Invalid tint",
+		  }
+		);
+
+	  expect(
+		button.style.background
+	  ).toContain(
+		"rgba(255, 255, 255, 0.25)"
+	  );
+	});
 });
