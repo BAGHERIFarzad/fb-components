@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest a component, capability, or improvement
+description: Suggest a new component, API improvement, or developer-experience enhancement
 title: "[Feature]: "
 labels:
   - enhancement
@@ -7,40 +7,82 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thanks for suggesting an improvement to FB Components.
-  - type: input
-    id: area
+        Thanks for helping improve FB Components.
+
+        Please describe the problem or use case first, then the proposed solution.
+
+  - type: dropdown
+    id: category
     attributes:
       label: Area
-      placeholder: Buttons / AI / Data / Packaging / Documentation
+      description: Which part of the project does this request relate to?
+      options:
+        - New component
+        - Existing component API
+        - Accessibility
+        - Styling / theming
+        - Motion / animation
+        - AI UI
+        - Data visualization
+        - Documentation
+        - Developer experience
+        - Build / packaging
+        - Other
     validations:
       required: true
+
+  - type: input
+    id: component
+    attributes:
+      label: Related component
+      description: If applicable, name the component or category.
+      placeholder: e.g. GlassButton, data, motion
+
   - type: textarea
     id: problem
     attributes:
       label: Problem or use case
+      description: What problem are you trying to solve?
     validations:
       required: true
+
   - type: textarea
     id: proposal
     attributes:
       label: Proposed solution
+      description: What would you like FB Components to provide?
     validations:
       required: true
-  - type: dropdown
-    id: breaking
+
+  - type: textarea
+    id: api
     attributes:
-      label: Would this require a breaking API change?
-      options:
-        - "No"
-        - "Maybe"
-        - "Yes"
-    validations:
-      required: true
+      label: Suggested API or example
+      description: If relevant, show how you imagine the feature being used.
+      placeholder: |
+        <ExampleComponent
+          value={42}
+          animated
+        />
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you considered other approaches or workarounds?
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context
+      description: Add screenshots, references, design notes, or related links.
+
   - type: checkboxes
     id: checks
     attributes:
-      label: Checklist
+      label: Submission checklist
       options:
-        - label: I searched existing issues before opening this request.
+        - label: I searched existing issues for a similar request.
+          required: true
+        - label: This request is relevant to the public FB Components package.
           required: true

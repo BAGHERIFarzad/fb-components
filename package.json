@@ -1,10 +1,11 @@
 {
   "name": "@farzadbagheri/fb-components",
   "version": "0.1.3",
-  "description": "Production-minded React components for motion, AI interfaces, data visualization and modern product experiences.",
+  "description": "Production-minded React 18/19 + TypeScript components for motion, AI interfaces, dashboards, data visualization, SaaS heroes, landing pages, and modern product UI.",
   "license": "MIT",
   "author": {
-    "name": "Farzad Bagheri"
+    "name": "Farzad Bagheri",
+    "url": "https://farzadbagheri.fr"
   },
   "repository": {
     "type": "git",
@@ -81,11 +82,14 @@
       "require": "./dist/data.cjs"
     },
     "./data.css": "./dist/data.css",
-    "./styles.css": "./dist/index.css"
+    "./styles.css": "./dist/index.css",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist",
     "README.md",
+    "COMPONENTS.md",
+    "EXAMPLES.md",
     "LICENSE"
   ],
   "engines": {
@@ -94,18 +98,31 @@
   "keywords": [
     "react",
     "react-components",
+    "react-component-library",
+    "component-library",
     "ui",
     "ui-components",
-    "components",
     "typescript",
+    "typescript-components",
     "animation",
+    "animated-components",
     "motion",
     "ai",
     "ai-ui",
+    "ai-components",
     "dashboard",
+    "dashboard-components",
     "data-visualization",
     "design-system",
-    "frontend"
+    "frontend",
+    "saas",
+    "saas-ui",
+    "landing-page",
+    "hero-section",
+    "glassmorphism",
+    "accessibility",
+    "vite",
+    "nextjs"
   ],
   "publishConfig": {
     "access": "public"
