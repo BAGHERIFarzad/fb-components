@@ -1,36 +1,60 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import {
+  render,
+  screen,
+} from "@testing-library/react";
+
+import {
+  describe,
+  expect,
+  it,
+} from "vitest";
 
 import { expectNoAccessibilityViolations } from "../test/accessibility";
 import { RadialProgress } from "./RadialProgress";
 
 describe("RadialProgress", () => {
   it("renders successfully", () => {
-    const { container } = render(
-      <RadialProgress value={72} />
+    const {
+      container,
+    } = render(
+      <RadialProgress
+        value={72}
+      />
     );
 
-    expect(container.firstChild).toBeTruthy();
+    expect(
+      container.firstChild
+    ).toBeTruthy();
   });
 
   it("renders different progress values", () => {
-    const { rerender } = render(
+    const {
+      rerender,
+    } = render(
       <RadialProgress
         value={25}
         ariaLabel="Upload progress"
       />
     );
 
-    let progressbar = screen.getByRole("progressbar", {
-      name: "Upload progress",
-    });
+    let progressbar =
+      screen.getByRole(
+        "progressbar",
+        {
+          name: "Upload progress",
+        }
+      );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuenow",
       "25"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuetext",
       "25%"
     );
@@ -42,16 +66,24 @@ describe("RadialProgress", () => {
       />
     );
 
-    progressbar = screen.getByRole("progressbar", {
-      name: "Upload progress",
-    });
+    progressbar =
+      screen.getByRole(
+        "progressbar",
+        {
+          name: "Upload progress",
+        }
+      );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuenow",
       "80"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuetext",
       "80%"
     );
@@ -65,26 +97,38 @@ describe("RadialProgress", () => {
       />
     );
 
-    const progressbar = screen.getByRole("progressbar", {
-      name: "Profile completion",
-    });
+    const progressbar =
+      screen.getByRole(
+        "progressbar",
+        {
+          name: "Profile completion",
+        }
+      );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuemin",
       "0"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuemax",
       "100"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuenow",
       "72"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuetext",
       "72%"
     );
@@ -92,13 +136,18 @@ describe("RadialProgress", () => {
 
   it("uses the default accessible label", () => {
     render(
-      <RadialProgress value={40} />
+      <RadialProgress
+        value={40}
+      />
     );
 
     expect(
-      screen.getByRole("progressbar", {
-        name: "Progress",
-      })
+      screen.getByRole(
+        "progressbar",
+        {
+          name: "Progress",
+        }
+      )
     ).toBeInTheDocument();
   });
 
@@ -110,16 +159,24 @@ describe("RadialProgress", () => {
       />
     );
 
-    const progressbar = screen.getByRole("progressbar", {
-      name: "Negative progress",
-    });
+    const progressbar =
+      screen.getByRole(
+        "progressbar",
+        {
+          name: "Negative progress",
+        }
+      );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuenow",
       "0"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuetext",
       "0%"
     );
@@ -133,16 +190,24 @@ describe("RadialProgress", () => {
       />
     );
 
-    const progressbar = screen.getByRole("progressbar", {
-      name: "Maximum progress",
-    });
+    const progressbar =
+      screen.getByRole(
+        "progressbar",
+        {
+          name: "Maximum progress",
+        }
+      );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuenow",
       "100"
     );
 
-    expect(progressbar).toHaveAttribute(
+    expect(
+      progressbar
+    ).toHaveAttribute(
       "aria-valuetext",
       "100%"
     );
@@ -157,22 +222,74 @@ describe("RadialProgress", () => {
     );
 
     expect(
-      screen.getByText("PROFILE COMPLETE")
+      screen.getByText(
+        "PROFILE COMPLETE"
+      )
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText("64")
+      screen.getByText(
+        "64"
+      )
     ).toBeInTheDocument();
   });
 
+  it("applies the animated class by default", () => {
+    const {
+      container,
+    } = render(
+      <RadialProgress
+        value={72}
+      />
+    );
+
+    expect(
+      container.querySelector(
+        ".fb-radial-progress__value"
+      )
+    ).toHaveClass(
+      "fb-radial-progress__value--animated"
+    );
+  });
+
+  it("removes the animated class when animated is false", () => {
+    const {
+      container,
+    } = render(
+      <RadialProgress
+        value={72}
+        animated={false}
+      />
+    );
+
+    const valueCircle =
+      container.querySelector(
+        ".fb-radial-progress__value"
+      );
+
+    expect(
+      valueCircle
+    ).toBeInTheDocument();
+
+    expect(
+      valueCircle
+    ).not.toHaveClass(
+      "fb-radial-progress__value--animated"
+    );
+  });
+
   it("has no obvious accessibility violations", async () => {
-    const { container } = render(
+    const {
+      container,
+    } = render(
       <RadialProgress
         value={72}
         ariaLabel="Profile completion"
       />
     );
 
-    await expectNoAccessibilityViolations(container);
+    await expectNoAccessibilityViolations(
+      container
+    );
   });
 });

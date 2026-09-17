@@ -1,4 +1,5 @@
 import {
+  fireEvent,
   render,
   screen,
 } from "@testing-library/react";
@@ -207,6 +208,35 @@ describe("AiPromptBox", () => {
     );
   });
 
+  it("handles a valid submission when no onSubmit callback is provided", async () => {
+    const user =
+      userEvent.setup();
+
+    render(
+      <AiPromptBox
+        defaultValue="Valid prompt"
+      />
+    );
+
+    const submit =
+      screen.getByRole(
+        "button",
+        {
+          name: "Submit prompt",
+        }
+      );
+
+    expect(
+      submit
+    ).toBeEnabled();
+
+    await expect(
+      user.click(
+        submit
+      )
+    ).resolves.toBeUndefined();
+  });
+
   it("does not submit an empty prompt", async () => {
     const user =
       userEvent.setup();
@@ -242,6 +272,34 @@ describe("AiPromptBox", () => {
       onSubmit
     ).not.toHaveBeenCalled();
   });
+  
+  it("returns early when the form is submitted with an empty prompt", () => {
+	  const onSubmit =
+		vi.fn();
+
+	  const {
+		container,
+	  } = render(
+		<AiPromptBox
+		  onSubmit={
+			onSubmit
+		  }
+		/>
+	  );
+
+	  const form =
+		container.querySelector(
+		  ".fb-ai-prompt-box__form"
+		) as HTMLFormElement;
+
+	  fireEvent.submit(
+		form
+	  );
+
+	  expect(
+		onSubmit
+	  ).not.toHaveBeenCalled();
+	});
 
   it("renders the provided default value", () => {
     render(
