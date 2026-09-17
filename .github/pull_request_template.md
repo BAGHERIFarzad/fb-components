@@ -1,42 +1,69 @@
 ## Summary
 
-Describe what this pull request changes and why.
+<!-- Briefly explain what this pull request changes and why. -->
 
 ## Type of change
 
+- [ ] Feature
 - [ ] Bug fix
-- [ ] New component or feature
-- [ ] Documentation
 - [ ] Refactor
-- [ ] CI / tooling
-- [ ] Dependency update
-- [ ] Breaking change
+- [ ] Tests
+- [ ] Documentation
+- [ ] Build / packaging
+- [ ] Chore
 
-## Public API impact
+## Scope
 
-Does this change exports, props, CSS contracts, entry points, or documented behavior? If yes, explain.
+<!-- List the components, categories, files, or package areas affected. -->
 
-## Testing
+## Validation
 
+- [ ] `git diff --check`
 - [ ] `npm run typecheck`
+- [ ] `npm run test`
 - [ ] `npm run build`
 - [ ] `npm run package:size`
 - [ ] `npm run install-test`
-- [ ] `npm run release:check`
+
+If a check is not relevant, explain why below.
+
+## Public API impact
+
+- [ ] No public API change
+- [ ] Public props changed
+- [ ] New public component or export
+- [ ] Export path changed
+- [ ] CSS entry point changed
+- [ ] Peer dependency or runtime requirement changed
+
+If there is a public API change, describe migration or compatibility considerations.
+
+## Accessibility
+
+- [ ] No accessibility impact
+- [ ] Accessibility behavior was reviewed
+- [ ] Accessibility tests were added or updated
 
 ## Documentation
 
-- [ ] README updated if needed
-- [ ] CHANGELOG updated if user-visible
-- [ ] Examples updated if needed
+- [ ] No documentation change required
+- [ ] `README.md` updated
+- [ ] `COMPONENTS.md` updated
+- [ ] `EXAMPLES.md` updated
+- [ ] `DEVELOPMENT.md` updated
+- [ ] `CHANGELOG.md` updated
 
-## Visual changes
+## Package impact
 
-Add screenshots or a short recording when the change affects rendered UI.
+<!-- Note any relevant package-size or install-test changes. -->
 
-## Checklist
+## Screenshots / examples
 
-- [ ] I kept this PR focused on one logical change.
-- [ ] I checked for accidental secrets or private data.
-- [ ] I considered backward compatibility.
-- [ ] I verified the package can still be consumed from its public entry points.
+<!-- Add screenshots, code examples, or before/after notes when useful. -->
+
+## Final checklist
+
+- [ ] The change is focused and does not include unrelated files.
+- [ ] Tests cover meaningful behavior rather than implementation details.
+- [ ] No secrets, tokens, credentials, or private data are included.
+- [ ] The branch is ready for CI and review.
