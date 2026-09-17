@@ -272,7 +272,7 @@ describe("AiPromptBox", () => {
       onSubmit
     ).not.toHaveBeenCalled();
   });
-  
+
   it("returns early when the form is submitted with an empty prompt", () => {
 	  const onSubmit =
 		vi.fn();
