@@ -46,6 +46,9 @@ export default defineConfig({
 		  "src/backgrounds/NoiseField.tsx",
 		  "src/backgrounds/PredictiveArc.tsx",
 		  "src/backgrounds/SignalParticles.tsx",
+		  
+		  "src/heroes/SaasLaunchHero.tsx",
+		  "src/landing/StartupLanding.tsx",
 		],
 
       thresholds: {
