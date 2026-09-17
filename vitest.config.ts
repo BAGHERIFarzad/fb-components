@@ -39,6 +39,13 @@ export default defineConfig({
 		  
 		  "src/motion/GlowCursor.tsx",
 		  "src/motion/MagneticCursor.tsx",
+		  
+		  "src/backgrounds/AuroraGrid.tsx",
+		  "src/backgrounds/DotMatrix.tsx",
+		  "src/backgrounds/GradientMesh.tsx",
+		  "src/backgrounds/NoiseField.tsx",
+		  "src/backgrounds/PredictiveArc.tsx",
+		  "src/backgrounds/SignalParticles.tsx",
 		],
 
       thresholds: {
