@@ -69,7 +69,7 @@ describe("GlassButton", () => {
 
     await expectNoAccessibilityViolations(container);
   });
-  
+
   it("falls back to white when tint is not a six-digit hex color", () => {
 	  render(
 		<GlassButton
