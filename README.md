@@ -1,143 +1,85 @@
 # FB Components
 
-[![npm version](https://img.shields.io/npm/v/@farzadbagheri/fb-components.svg)](https://www.npmjs.com/package/@farzadbagheri/fb-components)
-[![npm downloads](https://img.shields.io/npm/dm/@farzadbagheri/fb-components.svg)](https://www.npmjs.com/package/@farzadbagheri/fb-components)
-[![CI](https://github.com/BAGHERIFarzad/fb-components/actions/workflows/ci.yml/badge.svg)](https://github.com/BAGHERIFarzad/fb-components/actions/workflows/ci.yml)
-[![license](https://img.shields.io/npm/l/@farzadbagheri/fb-components.svg)](./LICENSE)
-[![React](https://img.shields.io/badge/React-18%20%7C%2019-61DAFB?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![Node](https://img.shields.io/badge/Node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+> Production-minded React + TypeScript components for AI interfaces, motion, dashboards, data visualization, SaaS experiences, and modern product UI.
 
-**Production-minded React components for motion, AI interfaces, modern landing pages, data visualization, and polished product experiences.**
+[![npm version](https://img.shields.io/npm/v/@farzadbagheri/fb-components?style=flat-square&label=npm)](https://www.npmjs.com/package/@farzadbagheri/fb-components)
+[![npm downloads](https://img.shields.io/npm/dm/@farzadbagheri/fb-components?style=flat-square)](https://www.npmjs.com/package/@farzadbagheri/fb-components)
+[![CI](https://img.shields.io/github/actions/workflow/status/BAGHERIFarzad/fb-components/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/BAGHERIFarzad/fb-components/actions)
+[![license](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](./LICENSE)
+[![React](https://img.shields.io/badge/React-18%20%7C%2019-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-ready-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-FB Components is a modern React component library built for polished product interfaces. It includes reusable components with TypeScript declarations, ESM/CommonJS builds, category-based entry points, and category-specific CSS so you can import only what you need.
+FB Components is a modern component library for teams building polished React products. It combines expressive visuals with practical package architecture: typed APIs, category entry points, category-specific CSS, React 18/19 support, ESM/CommonJS builds, accessibility-aware patterns, and real consumer-install validation.
 
-## Documentation
+**Current release:** `0.1.4`
 
-- [Component API Reference](./COMPONENTS.md)
-- [Usage Examples](./EXAMPLES.md)
-- [Development Guide](./DEVELOPMENT.md)
-- [Contributing](./CONTRIBUTING.md)
-- [Release Guide](./RELEASING.md)
-- [Security Policy](./SECURITY.md)
+**22 public components · React 18/19 · TypeScript · ESM/CJS · Category imports · Accessibility-aware**
 
-- **npm:** `@farzadbagheri/fb-components`
-- **Current release:** `0.1.4`
-- **Website:** https://farzadbagheri.fr/en/components
-- **GitHub:** https://github.com/BAGHERIFarzad/fb-components
-- **License:** MIT
-
-## Explore More
-
-- [Why FB Components?](./WHY-FB-COMPONENTS.md)
-- [Component Showcase](./SHOWCASE.md)
-- [Component API](./COMPONENTS.md)
-- [Examples](./EXAMPLES.md)
-- [Development Guide](./DEVELOPMENT.md)
----
-
-## Highlights
-
-- 22 free React components
-- React 18 and React 19 support
-- TypeScript declarations included
-- ESM and CommonJS builds
-- Tree-shaking-friendly JavaScript exports
-- Category-based imports
-- Category-specific CSS exports
-- Root convenience import
-- Modern UI, motion, AI, data, hero, landing, and background components
-- Accessibility-conscious APIs
-- Automated release validation
+[Live Components](https://farzadbagheri.fr/en/components) ·
+[npm](https://www.npmjs.com/package/@farzadbagheri/fb-components) ·
+[Component API](./COMPONENTS.md) ·
+[Examples](./EXAMPLES.md) ·
+[Why FB Components?](./WHY-FB-COMPONENTS.md) ·
+[Showcase](./SHOWCASE.md)
 
 ---
 
-## Installation
+## Quick Start
+
+Install the package:
 
 ```bash
 npm install @farzadbagheri/fb-components
 ```
 
-Requirements:
-
-```text
-React >=18 <20
-React DOM >=18 <20
-Node >=18
-```
-
-`lucide-react` is installed automatically as a package dependency.
-
----
-
-## Recommended usage
-
-For the smallest CSS footprint, import from a category entry point:
+Import from a focused category:
 
 ```tsx
 import { GlowButton } from "@farzadbagheri/fb-components/buttons";
 import "@farzadbagheri/fb-components/buttons.css";
 
 export function Example() {
-  return <GlowButton>Launch</GlowButton>;
+  return (
+    <GlowButton>
+      Get started
+    </GlowButton>
+  );
 }
 ```
 
-This is the recommended pattern when you only need components from one category.
-
----
-
-## Convenience usage
-
-You can also import from the root package:
-
-```tsx
-import { GlowButton } from "@farzadbagheri/fb-components";
-import "@farzadbagheri/fb-components/styles.css";
-
-export function Example() {
-  return <GlowButton>Launch</GlowButton>;
-}
-```
-
-The root JavaScript entry remains tree-shaking friendly, while `styles.css` includes the complete stylesheet bundle.
-
----
-
-## Component catalog
-
-FB Components currently includes **22 free public components** across nine categories.
-
-| Category | Components |
-|---|---|
-| Backgrounds | PredictiveArc, SignalParticles, DotMatrix, GradientMesh, AuroraGrid, NoiseField |
-| Buttons | MagneticButton, GlowButton, GlassButton |
-| Text | RevealText, BlurReveal |
-| UI | SpotlightCard, GlassCard |
-| Motion | GlowCursor, MagneticCursor |
-| AI | AiPromptBox, StreamingResponse |
-| Heroes | SaasLaunchHero |
-| Landing | StartupLanding |
-| Data | AnimatedCounter, RadialProgress, MetricGrid |
-
----
-
-## Backgrounds
+Or import from the root package:
 
 ```tsx
 import {
-  PredictiveArc,
-  SignalParticles,
-  DotMatrix,
-  GradientMesh,
-  AuroraGrid,
-  NoiseField,
-} from "@farzadbagheri/fb-components/backgrounds";
+  GlowButton,
+  AiPromptBox,
+  MetricGrid,
+} from "@farzadbagheri/fb-components";
 
-import "@farzadbagheri/fb-components/backgrounds.css";
+import "@farzadbagheri/fb-components/styles.css";
 ```
 
-Available components:
+---
+
+## Why FB Components?
+
+Many UI libraries optimize either for visual impact or for production ergonomics. FB Components is built to do both.
+
+- **Production-minded** — typed APIs, package validation, predictable exports, and real consumer-install checks.
+- **TypeScript-first** — declarations ship with the package.
+- **Focused imports** — import JavaScript and CSS by category instead of loading the whole library.
+- **React 18 + 19** — designed for current React applications.
+- **Accessibility-aware** — native semantics, ARIA patterns, keyboard behavior, and accessibility-focused testing where appropriate.
+- **Product-oriented** — components for AI interfaces, dashboards, SaaS experiences, motion, data visualization, and landing pages.
+- **Framework-friendly** — works well with modern React tooling including Vite and Next.js.
+
+Read the full positioning guide: [WHY-FB-COMPONENTS.md](./WHY-FB-COMPONENTS.md)
+
+---
+
+## Explore the Library
+
+### Backgrounds
 
 - `PredictiveArc`
 - `SignalParticles`
@@ -146,20 +88,20 @@ Available components:
 - `AuroraGrid`
 - `NoiseField`
 
-Example:
-
 ```tsx
-<PredictiveArc
-  color="#9b7cff"
-  size={70}
-  thickness={3}
-  glow={16}
-/>
+import {
+  PredictiveArc,
+  AuroraGrid,
+} from "@farzadbagheri/fb-components/backgrounds";
+
+import "@farzadbagheri/fb-components/backgrounds.css";
 ```
 
----
+### Buttons
 
-## Buttons
+- `MagneticButton`
+- `GlowButton`
+- `GlassButton`
 
 ```tsx
 import {
@@ -171,27 +113,10 @@ import {
 import "@farzadbagheri/fb-components/buttons.css";
 ```
 
-Available components:
+### Text
 
-- `MagneticButton`
-- `GlowButton`
-- `GlassButton`
-
-Example:
-
-```tsx
-<GlassButton
-  tint="#9b7cff"
-  opacity={0.12}
-  blur={18}
->
-  Explore
-</GlassButton>
-```
-
----
-
-## Text animation
+- `RevealText`
+- `BlurReveal`
 
 ```tsx
 import {
@@ -202,22 +127,10 @@ import {
 import "@farzadbagheri/fb-components/text.css";
 ```
 
-Available components:
+### UI
 
-- `RevealText`
-- `BlurReveal`
-
-Example:
-
-```tsx
-<RevealText>
-  Build better interfaces.
-</RevealText>
-```
-
----
-
-## UI
+- `SpotlightCard`
+- `GlassCard`
 
 ```tsx
 import {
@@ -228,23 +141,10 @@ import {
 import "@farzadbagheri/fb-components/ui.css";
 ```
 
-Available components:
+### Motion
 
-- `SpotlightCard`
-- `GlassCard`
-
-Example:
-
-```tsx
-<SpotlightCard>
-  <h3>AI Platform</h3>
-  <p>Build modern AI experiences.</p>
-</SpotlightCard>
-```
-
----
-
-## Motion
+- `GlowCursor`
+- `MagneticCursor`
 
 ```tsx
 import {
@@ -255,27 +155,10 @@ import {
 import "@farzadbagheri/fb-components/motion.css";
 ```
 
-Available components:
+### AI
 
-- `GlowCursor`
-- `MagneticCursor`
-
-Example:
-
-```tsx
-<MagneticCursor>
-  <button
-    type="button"
-    data-magnetic-target
-  >
-    Explore
-  </button>
-</MagneticCursor>
-```
-
----
-
-## AI
+- `AiPromptBox`
+- `StreamingResponse`
 
 ```tsx
 import {
@@ -286,73 +169,35 @@ import {
 import "@farzadbagheri/fb-components/ai.css";
 ```
 
-Available components:
-
-- `AiPromptBox`
-- `StreamingResponse`
-
-Example:
-
-```tsx
-<AiPromptBox
-  modelLabel="FB AI · Fast"
-  placeholder="Describe your task"
-  onSubmit={(value) => {
-    console.log(value);
-  }}
-/>
-```
-
----
-
-## Heroes
-
-```tsx
-import { SaasLaunchHero } from "@farzadbagheri/fb-components/heroes";
-import "@farzadbagheri/fb-components/heroes.css";
-```
-
-Available component:
+### Heroes
 
 - `SaasLaunchHero`
 
-Example:
-
 ```tsx
-<SaasLaunchHero
-  eyebrow="BUILT FOR MODERN TEAMS"
-  title={"Ship faster.\nScale smarter."}
-  primaryLabel="Start free"
-  secondaryLabel="See demo"
-/>
+import {
+  SaasLaunchHero,
+} from "@farzadbagheri/fb-components/heroes";
+
+import "@farzadbagheri/fb-components/heroes.css";
 ```
 
----
-
-## Landing
-
-```tsx
-import { StartupLanding } from "@farzadbagheri/fb-components/landing";
-import "@farzadbagheri/fb-components/landing.css";
-```
-
-Available component:
+### Landing Pages
 
 - `StartupLanding`
 
-Example:
-
 ```tsx
-<StartupLanding
-  accent="#7d63ff"
-  showMetrics
-  showFeatures
-/>
+import {
+  StartupLanding,
+} from "@farzadbagheri/fb-components/landing";
+
+import "@farzadbagheri/fb-components/landing.css";
 ```
 
----
+### Data
 
-## Data
+- `AnimatedCounter`
+- `RadialProgress`
+- `MetricGrid`
 
 ```tsx
 import {
@@ -364,120 +209,80 @@ import {
 import "@farzadbagheri/fb-components/data.css";
 ```
 
-Available components:
-
-- `AnimatedCounter`
-- `RadialProgress`
-- `MetricGrid`
-
-Examples:
-
-```tsx
-<AnimatedCounter
-  value={128}
-  suffix="K"
-  label="ACTIVE USERS"
-  delta="+18.4%"
-/>
-
-<RadialProgress
-  value={72}
-  label="COMPLETE"
-  ariaLabel="Profile completion"
-/>
-
-<MetricGrid />
-```
-
 ---
 
-## All root exports
+## Popular Components
 
-The root entry exports all 22 free components:
+### GlowButton
 
-```tsx
-import {
-  AiPromptBox,
-  AnimatedCounter,
-  AuroraGrid,
-  BlurReveal,
-  DotMatrix,
-  GlassButton,
-  GlassCard,
-  GlowButton,
-  GlowCursor,
-  GradientMesh,
-  MagneticButton,
-  MagneticCursor,
-  MetricGrid,
-  NoiseField,
-  PredictiveArc,
-  RadialProgress,
-  RevealText,
-  SaasLaunchHero,
-  SignalParticles,
-  SpotlightCard,
-  StartupLanding,
-  StreamingResponse,
-} from "@farzadbagheri/fb-components";
-```
-
----
-
-## Package entry points
-
-| Category | JavaScript import | CSS import |
-|---|---|---|
-| Root | `@farzadbagheri/fb-components` | `@farzadbagheri/fb-components/styles.css` |
-| Backgrounds | `@farzadbagheri/fb-components/backgrounds` | `@farzadbagheri/fb-components/backgrounds.css` |
-| Buttons | `@farzadbagheri/fb-components/buttons` | `@farzadbagheri/fb-components/buttons.css` |
-| Text | `@farzadbagheri/fb-components/text` | `@farzadbagheri/fb-components/text.css` |
-| UI | `@farzadbagheri/fb-components/ui` | `@farzadbagheri/fb-components/ui.css` |
-| Motion | `@farzadbagheri/fb-components/motion` | `@farzadbagheri/fb-components/motion.css` |
-| AI | `@farzadbagheri/fb-components/ai` | `@farzadbagheri/fb-components/ai.css` |
-| Heroes | `@farzadbagheri/fb-components/heroes` | `@farzadbagheri/fb-components/heroes.css` |
-| Landing | `@farzadbagheri/fb-components/landing` | `@farzadbagheri/fb-components/landing.css` |
-| Data | `@farzadbagheri/fb-components/data` | `@farzadbagheri/fb-components/data.css` |
-
----
-
-## CSS strategy
-
-FB Components does **not** automatically inject the complete stylesheet when you import JavaScript.
-
-### Category CSS — recommended
+A focused CTA button with configurable glow behavior.
 
 ```tsx
 import { GlowButton } from "@farzadbagheri/fb-components/buttons";
 import "@farzadbagheri/fb-components/buttons.css";
+
+export function CTA() {
+  return (
+    <GlowButton>
+      Launch product
+    </GlowButton>
+  );
+}
 ```
 
-Use this when you want a smaller CSS footprint.
+### AiPromptBox
 
-### Full stylesheet
+A polished prompt input pattern for AI-native interfaces.
 
 ```tsx
-import { GlowButton } from "@farzadbagheri/fb-components";
-import "@farzadbagheri/fb-components/styles.css";
+import { AiPromptBox } from "@farzadbagheri/fb-components/ai";
+import "@farzadbagheri/fb-components/ai.css";
+
+export function AssistantInput() {
+  return (
+    <AiPromptBox
+      placeholder="Ask anything..."
+      modelLabel="FB AI · Fast"
+      onSubmit={() => undefined}
+    />
+  );
+}
 ```
 
-Use this when you prefer convenience or are using components across several categories.
+### RadialProgress
 
----
-
-## TypeScript
-
-Type declarations are included with the package. No separate `@types` package is required.
+A compact progress visualization for dashboards and product metrics.
 
 ```tsx
 import { RadialProgress } from "@farzadbagheri/fb-components/data";
 import "@farzadbagheri/fb-components/data.css";
 
-export function ProgressExample() {
+export function Completion() {
   return (
     <RadialProgress
       value={72}
-      ariaLabel="Profile completion"
+      label="COMPLETE"
+      aria-label="Profile completion"
+    />
+  );
+}
+```
+
+### SaasLaunchHero
+
+A complete hero section for modern SaaS landing pages.
+
+```tsx
+import { SaasLaunchHero } from "@farzadbagheri/fb-components/heroes";
+import "@farzadbagheri/fb-components/heroes.css";
+
+export function LandingHero() {
+  return (
+    <SaasLaunchHero
+      eyebrow="BUILT FOR MODERN TEAMS"
+      title={"Ship faster.\nScale smarter."}
+      primaryLabel="Start free"
+      secondaryLabel="See demo"
     />
   );
 }
@@ -485,221 +290,239 @@ export function ProgressExample() {
 
 ---
 
-## React compatibility
+## Live Showcase
 
-Supported versions:
+The interactive component platform includes:
 
-```text
-React 18
-React 19
-```
+- live previews
+- searchable catalog
+- Free / Pro filters
+- category filtering
+- interactive playgrounds
+- copy-paste usage examples
+- installation snippets
+- props and configuration tables
+- source-code views
+- EN / FR routes
+- previous / next component navigation
 
-Peer dependency range:
+Explore it here:
 
-```text
->=18 <20
-```
+**https://farzadbagheri.fr/en/components**
 
-FB Components uses standard React APIs and can be integrated into Vite, React Router applications, Next.js client components, and other standard React build systems.
+French:
+
+**https://farzadbagheri.fr/fr/composants**
 
 ---
 
-## ESM and CommonJS
+## Package Entry Points
 
-### ESM
+FB Components exposes both the root package and category-level entry points:
 
-```ts
+```text
+@farzadbagheri/fb-components
+@farzadbagheri/fb-components/backgrounds
+@farzadbagheri/fb-components/buttons
+@farzadbagheri/fb-components/text
+@farzadbagheri/fb-components/ui
+@farzadbagheri/fb-components/motion
+@farzadbagheri/fb-components/ai
+@farzadbagheri/fb-components/heroes
+@farzadbagheri/fb-components/landing
+@farzadbagheri/fb-components/data
+```
+
+CSS entry points:
+
+```text
+@farzadbagheri/fb-components/styles.css
+@farzadbagheri/fb-components/backgrounds.css
+@farzadbagheri/fb-components/buttons.css
+@farzadbagheri/fb-components/text.css
+@farzadbagheri/fb-components/ui.css
+@farzadbagheri/fb-components/motion.css
+@farzadbagheri/fb-components/ai.css
+@farzadbagheri/fb-components/heroes.css
+@farzadbagheri/fb-components/landing.css
+@farzadbagheri/fb-components/data.css
+```
+
+The package also exposes:
+
+```text
+@farzadbagheri/fb-components/package.json
+```
+
+---
+
+## TypeScript
+
+Type declarations are generated and published with the package.
+
+```tsx
+import type { ComponentProps } from "react";
 import { GlowButton } from "@farzadbagheri/fb-components/buttons";
+
+type GlowButtonProps =
+  ComponentProps<typeof GlowButton>;
 ```
 
-### CommonJS
-
-```js
-const { GlowButton } = require("@farzadbagheri/fb-components/buttons");
-```
+Editors such as VS Code can provide type checking and IntelliSense directly from the package.
 
 ---
 
-## Tree shaking
+## CSS Strategy
 
-FB Components is built with category entry points and tree-shaking-friendly JavaScript output.
+You can choose between two approaches.
 
-For performance-oriented applications, prefer:
+### Category CSS
+
+Recommended when you want focused imports:
 
 ```tsx
 import { GlowButton } from "@farzadbagheri/fb-components/buttons";
 import "@farzadbagheri/fb-components/buttons.css";
 ```
 
-This avoids importing unrelated category CSS.
+### Root CSS
 
-The root JavaScript entry can still be tree-shaken by modern bundlers, while the root stylesheet intentionally contains styles for all categories.
+Useful when an application uses components across many categories:
+
+```tsx
+import "@farzadbagheri/fb-components/styles.css";
+```
+
+CSS files are marked as side effects so bundlers do not incorrectly remove imported component styles.
+
+---
+
+## React Compatibility
+
+FB Components supports:
+
+```text
+React 18
+React 19
+```
+
+The package declares React and ReactDOM as peer dependencies so your application controls the installed React version.
 
 ---
 
 ## Accessibility
 
-Accessibility is treated as part of the public component API.
+Accessibility is treated as part of component design rather than an afterthought.
 
-Examples include:
+Depending on the component, this can include:
 
-- semantic native buttons
-- explicit button types
-- progressbar ARIA semantics
-- descriptive labels where required
-- decorative elements hidden from assistive technology
-- keyboard-compatible native controls
-- accessibility-focused automated tests
+- native semantic elements
+- `aria-*` attributes
+- keyboard interaction
+- accessible labels
+- reduced-motion handling
+- accessibility-oriented tests
 
-Applications should still test complete pages in their own accessibility context.
-
----
-
-## Testing and quality
-
-The public component library is covered by automated tests across:
-
-- rendering
-- component props
-- interactions
-- keyboard behavior
-- visual configuration
-- accessibility
-- public exports
-- animation behavior
-- lifecycle cleanup
-- edge cases
-- fresh package installation
-
-The project also validates:
-
-```text
-TypeScript
-Tests
-Build
-Package size
-Fresh consumer installation
-```
-
-before release.
+Consumers remain responsible for providing meaningful accessible labels and content for their own product context.
 
 ---
 
-## Package size guard
-
-Current release guard limits:
-
-```text
-Packed package:   <= 100 kB
-Unpacked package: <= 600 kB
-Files:            <= 150
-```
-
-This helps prevent accidental package growth.
-
----
-
-## Documentation and live previews
-
-Explore the component catalog, live previews, installation guidance, and additional examples:
-
-https://farzadbagheri.fr/en/components
-
-French component pages:
-
-https://farzadbagheri.fr/fr/composants
-
----
-
-## MCP
-
-FB Components also has an MCP-oriented component discovery experience in the wider FB Components platform, allowing compatible AI tooling to discover component metadata and source availability.
-
-Documentation:
-
-https://farzadbagheri.fr/en/components/mcp
-
-The npm package itself remains a standard React package and does not require MCP to use the components.
-
----
-
-## Free and Pro components
-
-The npm package currently contains the **22 free components** listed in this README.
-
-The wider FB Components catalog may also display Pro components. Pro source code is not included in the public npm package.
-
----
-
-## Versioning
-
-FB Components currently follows pre-1.0 semantic versioning:
-
-```text
-0.1.x  → patches and fixes
-0.2.0  → new public features/components or meaningful API expansion
-1.0.0  → stable public API milestone
-```
-
-Release history:
-
-https://github.com/BAGHERIFarzad/fb-components/releases
-
----
-
-## Contributing
-
-Issues, bug reports, ideas, and feedback are welcome:
-
-https://github.com/BAGHERIFarzad/fb-components/issues
-
-See `CONTRIBUTING.md` before submitting larger changes.
-
-When reporting a problem, please include:
-
-- component name
-- React version
-- package version
-- reproduction steps
-- expected behavior
-- actual behavior
-- a minimal reproduction when possible
-
----
-
-## Development
-
-Install dependencies:
+## Vite
 
 ```bash
+npm create vite@latest my-app -- --template react-ts
+cd my-app
 npm install
+npm install @farzadbagheri/fb-components
+npm run dev
 ```
 
-Run tests:
+Then:
+
+```tsx
+import { GlowButton } from "@farzadbagheri/fb-components/buttons";
+import "@farzadbagheri/fb-components/buttons.css";
+```
+
+---
+
+## Next.js
+
+Install normally:
 
 ```bash
-npm run test
+npm install @farzadbagheri/fb-components
 ```
 
-Run coverage:
+For interactive client-side components, use them from a Client Component when required:
 
-```bash
-npm run test:coverage
+```tsx
+"use client";
+
+import { GlowButton } from "@farzadbagheri/fb-components/buttons";
+import "@farzadbagheri/fb-components/buttons.css";
+
+export default function Example() {
+  return (
+    <GlowButton>
+      Continue
+    </GlowButton>
+  );
+}
 ```
 
-Run type checking:
+See [EXAMPLES.md](./EXAMPLES.md) for more usage patterns.
 
-```bash
-npm run typecheck
+---
+
+## Documentation
+
+| Resource | Purpose |
+| --- | --- |
+| [COMPONENTS.md](./COMPONENTS.md) | Public component API reference |
+| [EXAMPLES.md](./EXAMPLES.md) | Practical React, Vite, Next.js, AI UI, dashboard, and accessibility examples |
+| [WHY-FB-COMPONENTS.md](./WHY-FB-COMPONENTS.md) | Positioning and design philosophy |
+| [SHOWCASE.md](./SHOWCASE.md) | Showcase-oriented component overview |
+| [DEVELOPMENT.md](./DEVELOPMENT.md) | Repository structure, testing, package architecture, and development workflow |
+| [CONTRIBUTING.md](./CONTRIBUTING.md) | Contribution guide |
+| [RELEASING.md](./RELEASING.md) | Release process |
+| [SECURITY.md](./SECURITY.md) | Security reporting guidance |
+| [CHANGELOG.md](./CHANGELOG.md) | Release history |
+
+---
+
+## Quality
+
+The current public library is validated with:
+
+- TypeScript type checking
+- Vitest
+- accessibility-oriented tests
+- ESM builds
+- CommonJS builds
+- TypeScript declaration generation
+- package-size limits
+- packed-package inspection
+- fresh consumer installation verification
+- root export verification
+
+Current validated test suite:
+
+```text
+23 test files
+307 passing tests
+100% function coverage across the measured public component set
 ```
 
-Build the package:
+Current package validation for `0.1.4`:
 
-```bash
-npm run build
-```
+| Metric | Current | Limit |
+| --- | ---: | ---: |
+| Packed size | ~85.7 kB | 100 kB |
+| Unpacked size | ~546.5 kB | 600 kB |
+| Files | 121 | 150 |
 
-Run complete release validation:
+Run the complete release validation locally:
 
 ```bash
 npm run release:check
@@ -707,47 +530,103 @@ npm run release:check
 
 ---
 
-## Security
+## Development
 
-Please do not publish secrets, credentials, tokens, API keys, or private application data in public issues.
+Clone the repository:
 
-See `SECURITY.md` for security reporting guidance.
+```bash
+git clone https://github.com/BAGHERIFarzad/fb-components.git
+cd fb-components
+npm install
+```
+
+Useful commands:
+
+```bash
+npm run typecheck
+npm test
+npm run test:coverage
+npm run build
+npm run package:size
+npm run install-test
+npm run release:check
+```
+
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for the complete development workflow.
 
 ---
 
-## Developer Documentation
+## Contributing
 
-For deeper technical documentation:
+Contributions, component ideas, bug reports, documentation improvements, and accessibility feedback are welcome.
 
-- [Why FB Components?](./WHY-FB-COMPONENTS.md)
-- [Component Showcase](./SHOWCASE.md)
-- [Component API Reference](./COMPONENTS.md)
-- [Usage Examples](./EXAMPLES.md)
-- [Development Guide](./DEVELOPMENT.md)
-- [Contributing Guide](./CONTRIBUTING.md)
-- [Release Guide](./RELEASING.md)
-- [Branch Protection](./BRANCH-PROTECTION.md)
-- [Security Policy](./SECURITY.md)
+Before contributing, read:
+
+[CONTRIBUTING.md](./CONTRIBUTING.md)
+
+When opening a pull request, please make sure relevant validation passes:
+
+```bash
+npm run typecheck
+npm test
+npm run build
+```
+
+For release-level validation:
+
+```bash
+npm run release:check
+```
+
+---
+
+## Roadmap
+
+Some areas being explored for future releases:
+
+- additional AI-native interface components
+- richer dashboard primitives
+- tables and data-heavy UI
+- command palette patterns
+- notification and feedback components
+- skeleton/loading states
+- modal and drawer patterns
+- tabs and navigation primitives
+- additional complete product sections
+- deeper framework examples
+- stronger SSR guidance
+- broader accessibility coverage
+- community-requested components
+
+Roadmap items are exploratory and may change.
+
+---
+
+## Support the Project
+
+If FB Components helps you build something useful:
+
+- star the repository
+- share it with another React developer
+- try the package in a real project
+- open an issue with feedback
+- suggest a component
+- contribute an improvement
+
+GitHub:
+
+**https://github.com/BAGHERIFarzad/fb-components**
+
+npm:
+
+**https://www.npmjs.com/package/@farzadbagheri/fb-components**
+
+Live documentation:
+
+**https://farzadbagheri.fr/en/components**
 
 ---
 
 ## License
 
-MIT © 2026 Farzad Bagheri.
-
-See [LICENSE](./LICENSE).
-
----
-
-## Links
-
-- **Website:** https://farzadbagheri.fr/en/components
-- **npm:** https://www.npmjs.com/package/@farzadbagheri/fb-components
-- **GitHub:** https://github.com/BAGHERIFarzad/fb-components
-- **Releases:** https://github.com/BAGHERIFarzad/fb-components/releases
-- **Issues:** https://github.com/BAGHERIFarzad/fb-components/issues
-- **MCP docs:** https://farzadbagheri.fr/en/components/mcp
-
----
-
-Built for modern React product experiences.
+MIT © Farzad Bagheri
