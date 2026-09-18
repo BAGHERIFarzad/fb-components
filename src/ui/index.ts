@@ -13,3 +13,11 @@ export {
 export type {
   GlassCardProps,
 } from "./GlassCard";
+
+export {
+  Skeleton,
+} from "./Skeleton";
+
+export type {
+  SkeletonProps,
+} from "./Skeleton";

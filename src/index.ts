@@ -68,11 +68,13 @@ export type {
 export {
   SpotlightCard,
   GlassCard,
+  Skeleton,
 } from "./ui";
 
 export type {
   SpotlightCardProps,
   GlassCardProps,
+  SkeletonProps,
 } from "./ui";
 
 
