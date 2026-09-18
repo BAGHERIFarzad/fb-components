@@ -22,11 +22,18 @@ FB Components is a modern React component library built for polished product int
 - [Security Policy](./SECURITY.md)
 
 - **npm:** `@farzadbagheri/fb-components`
-- **Current release:** `0.1.3`
+- **Current release:** `0.1.4`
 - **Website:** https://farzadbagheri.fr/en/components
 - **GitHub:** https://github.com/BAGHERIFarzad/fb-components
 - **License:** MIT
 
+## Explore More
+
+- [Why FB Components?](./WHY-FB-COMPONENTS.md)
+- [Component Showcase](./SHOWCASE.md)
+- [Component API](./COMPONENTS.md)
+- [Examples](./EXAMPLES.md)
+- [Development Guide](./DEVELOPMENT.md)
 ---
 
 ## Highlights
@@ -712,6 +719,8 @@ See `SECURITY.md` for security reporting guidance.
 
 For deeper technical documentation:
 
+- [Why FB Components?](./WHY-FB-COMPONENTS.md)
+- [Component Showcase](./SHOWCASE.md)
 - [Component API Reference](./COMPONENTS.md)
 - [Usage Examples](./EXAMPLES.md)
 - [Development Guide](./DEVELOPMENT.md)
