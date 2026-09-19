@@ -927,6 +927,50 @@ Keep meaningful interaction on native semantic elements:
 
 ---
 
+## Icon-only and magnetic buttons
+
+Icon-only buttons must carry an accessible name — the icon alone is not announced:
+
+```tsx
+// Good: name comes from aria-label
+<MagneticButton aria-label="Add to favorites">
+  <StarIcon />
+</MagneticButton>
+
+// Good: name comes from visible text
+<GlowButton>Save changes</GlowButton>
+```
+
+Pointer-driven effects (MagneticButton, MagneticCursor, GlowCursor) enhance pointer interaction but never replace it: all actions remain available via keyboard focus and activation. Do not attach critical handlers to hover or cursor proximity only.
+
+---
+
+## Keyboard behavior
+
+Interactive components are native `button` / `input` elements, so keyboard support is preserved by default:
+
+- `Tab` / `Shift+Tab` moves focus through controls in DOM order — keep DOM order matching visual order.
+- `Enter` / `Space` activates buttons.
+- Do not wrap components in extra clickable `div`s; compose around them instead.
+
+---
+
+## Reduced motion
+
+Motion components honor `prefers-reduced-motion` where animations are decorative (see each component's CSS). When building with motion components:
+
+```tsx
+// Motion is enhancement, not information — content must not
+// depend on an animation completing to be readable.
+<BlurReveal>
+  <h1>Results are ready</h1>
+</BlurReveal>
+```
+
+Responsibilities that remain with your app: meaningful page titles, focus management after route changes, live-region announcements for async updates, and sufficient contrast for custom themes.
+
+---
+
 # Recommended Composition Patterns
 
 ## Product Hero
