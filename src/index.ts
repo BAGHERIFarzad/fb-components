@@ -125,10 +125,12 @@ export type {
 
 export {
   StartupLanding,
+  LivingWorldLanding,
 } from "./landing";
 
 export type {
   StartupLandingProps,
+  LivingWorldLandingProps,
 } from "./landing";
 
 
