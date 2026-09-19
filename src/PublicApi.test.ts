@@ -21,6 +21,7 @@ describe("FB Components public API", () => {
       "DotMatrix",
       "GlassButton",
       "GlassCard",
+      "Skeleton",
       "GlowButton",
       "GlowCursor",
       "GradientMesh",
