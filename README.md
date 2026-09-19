@@ -1,4 +1,4 @@
-# FB Components
+﻿# FB Components
 
 > Production-minded React + TypeScript components for AI interfaces, motion, dashboards, data visualization, SaaS experiences, and modern product UI.
 
@@ -13,7 +13,7 @@ FB Components is a modern component library for teams building polished React pr
 
 **Current release:** `0.1.5`
 
-**22 public components · React 18/19 · TypeScript · ESM/CJS · Category imports · Accessibility-aware**
+**23 public components · React 18/19 · TypeScript · ESM/CJS · Category imports · Accessibility-aware**
 
 [Live Components](https://farzadbagheri.fr/en/components) ·
 [npm](https://www.npmjs.com/package/@farzadbagheri/fb-components) ·
@@ -184,10 +184,12 @@ import "@farzadbagheri/fb-components/heroes.css";
 ### Landing Pages
 
 - `StartupLanding`
+- `LivingWorldLanding`
 
 ```tsx
 import {
   StartupLanding,
+  LivingWorldLanding,
 } from "@farzadbagheri/fb-components/landing";
 
 import "@farzadbagheri/fb-components/landing.css";

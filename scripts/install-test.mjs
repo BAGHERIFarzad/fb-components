@@ -112,6 +112,7 @@ try {
     `
 import * as FB from "${PACKAGE_NAME}";
 import * as Buttons from "${PACKAGE_NAME}/buttons";
+import * as Landing from "${PACKAGE_NAME}/landing";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
@@ -120,13 +121,27 @@ const requiredRootExports = [
   "GlowButton",
   "RadialProgress",
   "StreamingResponse",
-  "SaasLaunchHero"
+  "SaasLaunchHero",
+  "LivingWorldLanding"
 ];
 
 for (const name of requiredRootExports) {
   if (!(name in FB)) {
     throw new Error(
       \`Missing root export: \${name}\`
+    );
+  }
+}
+
+const requiredLandingExports = [
+  "StartupLanding",
+  "LivingWorldLanding"
+];
+
+for (const name of requiredLandingExports) {
+  if (!(name in Landing)) {
+    throw new Error(
+      \`Missing landing export: \${name}\`
     );
   }
 }
@@ -149,8 +164,22 @@ const buttonsCss = require.resolve(
   "${PACKAGE_NAME}/buttons.css"
 );
 
+const landingCss = require.resolve(
+  "${PACKAGE_NAME}/landing.css"
+);
+
 const rootCss = require.resolve(
   "${PACKAGE_NAME}/styles.css"
+);
+
+console.log(
+  "Landing exports:",
+  Object.keys(Landing)
+);
+
+console.log(
+  "landing.css:",
+  landingCss
 );
 
 console.log("");

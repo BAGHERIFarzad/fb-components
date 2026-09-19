@@ -24,6 +24,7 @@ describe("FB Components public API", () => {
       "GlowButton",
       "GlowCursor",
       "GradientMesh",
+      "LivingWorldLanding",
       "MagneticButton",
       "MagneticCursor",
       "MetricGrid",
@@ -100,8 +101,11 @@ describe("FB Components public API", () => {
       "SaasLaunchHero"
     );
 
-    expect(Object.keys(Landing)).toContain(
-      "StartupLanding"
+    expect(Object.keys(Landing)).toEqual(
+      expect.arrayContaining([
+        "StartupLanding",
+        "LivingWorldLanding",
+      ])
     );
 
     expect(Object.keys(Motion)).toEqual(
