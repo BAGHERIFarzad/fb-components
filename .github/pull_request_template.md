@@ -1,69 +1,115 @@
 ## Summary
 
-<!-- Briefly explain what this pull request changes and why. -->
+Describe what changed and why.
 
-## Type of change
+## Related Issue
 
-- [ ] Feature
+Use one of the following when applicable:
+
+```text
+Closes #123
+Fixes #123
+Related to #123
+```
+
+If there is no related issue, explain why.
+
+## Change Type
+
+- [ ] New component
+- [ ] Existing component improvement
 - [ ] Bug fix
-- [ ] Refactor
-- [ ] Tests
+- [ ] Accessibility
 - [ ] Documentation
+- [ ] Testing
+- [ ] Developer experience
 - [ ] Build / packaging
-- [ ] Chore
+- [ ] Refactor
+- [ ] Other
 
-## Scope
+## Public API Impact
 
-<!-- List the components, categories, files, or package areas affected. -->
+- [ ] No public API change
+- [ ] Adds a new public API
+- [ ] Changes an existing public API
+
+If the public API changes, describe the new or changed imports, props, exports, or behavior.
+
+## Accessibility Impact
+
+- [ ] No accessibility impact
+- [ ] Accessibility behavior improved
+- [ ] Accessibility behavior changed
+
+Describe keyboard behavior, semantics, ARIA, focus behavior, reduced motion, or other relevant accessibility details.
+
+## Documentation Impact
+
+- [ ] No documentation changes required
+- [ ] Documentation updated
+- [ ] Examples updated
+- [ ] Component API documentation updated
+
+List the relevant docs changed.
+
+## Package / Bundle Impact
+
+- [ ] No meaningful package-size impact
+- [ ] Package size changed
+- [ ] New runtime dependency added
+- [ ] Export map changed
+- [ ] CSS entry point changed
+
+If relevant, describe the impact.
 
 ## Validation
 
+Before requesting review:
+
 - [ ] `git diff --check`
 - [ ] `npm run typecheck`
-- [ ] `npm run test`
+- [ ] `npm test`
 - [ ] `npm run build`
 - [ ] `npm run package:size`
 - [ ] `npm run install-test`
+- [ ] `npm run release:check`
 
-If a check is not relevant, explain why below.
+If any validation step was not run, explain why.
 
-## Public API impact
+## Test Coverage
 
-- [ ] No public API change
-- [ ] Public props changed
-- [ ] New public component or export
-- [ ] Export path changed
-- [ ] CSS entry point changed
-- [ ] Peer dependency or runtime requirement changed
+Describe the tests added or updated.
 
-If there is a public API change, describe migration or compatibility considerations.
+If no tests were required, explain why.
 
-## Accessibility
+## Screenshots / Demo
 
-- [ ] No accessibility impact
-- [ ] Accessibility behavior was reviewed
-- [ ] Accessibility tests were added or updated
+Add screenshots, recordings, or before/after examples when the change is visual.
 
-## Documentation
+If not applicable, write:
 
-- [ ] No documentation change required
-- [ ] `README.md` updated
-- [ ] `COMPONENTS.md` updated
-- [ ] `EXAMPLES.md` updated
-- [ ] `DEVELOPMENT.md` updated
-- [ ] `CHANGELOG.md` updated
+```text
+Not applicable.
+```
 
-## Package impact
+## Reviewer Notes
 
-<!-- Note any relevant package-size or install-test changes. -->
+Call out anything that deserves special review attention, such as:
 
-## Screenshots / examples
+- edge cases
+- backwards compatibility
+- accessibility behavior
+- API design
+- package-size tradeoffs
+- browser behavior
+- follow-up work
 
-<!-- Add screenshots, code examples, or before/after notes when useful. -->
+## Final Checklist
 
-## Final checklist
-
-- [ ] The change is focused and does not include unrelated files.
-- [ ] Tests cover meaningful behavior rather than implementation details.
-- [ ] No secrets, tokens, credentials, or private data are included.
-- [ ] The branch is ready for CI and review.
+- [ ] The change is focused and does not include unrelated edits.
+- [ ] Public examples use package entry points rather than internal source imports.
+- [ ] Documentation matches the real public API.
+- [ ] Accessibility was considered.
+- [ ] Tests cover meaningful observable behavior where practical.
+- [ ] `npm run release:check` passes.
+- [ ] No secrets, generated junk, or temporary files are included.
