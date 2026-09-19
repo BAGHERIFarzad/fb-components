@@ -34,8 +34,9 @@ It focuses on real integration patterns, category imports, CSS strategy, React u
 15. [TypeScript Example](#typescript-example)
 16. [Vite Example](#vite-example)
 17. [Next.js Client Component Example](#nextjs-client-component-example)
-18. [Accessibility Examples](#accessibility-examples)
-19. [Recommended Composition Patterns](#recommended-composition-patterns)
+18. [Next.js App Router Examples](#nextjs-app-router-examples)
+19. [Accessibility Examples](#accessibility-examples)
+20. [Recommended Composition Patterns](#recommended-composition-patterns)
 
 ---
 
@@ -853,6 +854,93 @@ For App Router projects, place the component inside a file that begins with:
 ```
 
 when the component or surrounding logic requires client-side interactivity.
+
+---
+
+# Next.js App Router Examples
+
+## Where imports go
+
+FB Components ship as Client Components. In the App Router:
+
+- **Server Components (default)** can render FB Components only through a client wrapper — do not add `"use client"` to your `page.tsx`; wrap once instead.
+- **Client wrappers** (files starting with `"use client"`) import components and their category CSS.
+
+## Recommended structure
+
+```text
+app/
+  layout.tsx          <- global or category CSS here
+  page.tsx            <- Server Component (no "use client")
+  components/
+    HeroClient.tsx    <- "use client" wrapper
+    MetricsClient.tsx <- "use client" wrapper
+```
+
+## 1. Client wrapper
+
+```tsx
+// app/components/HeroClient.tsx
+"use client";
+
+import { GlowButton } from "@farzadbagheri/fb-components/buttons";
+import { GradientMesh } from "@farzadbagheri/fb-components/backgrounds";
+
+export default function HeroClient() {
+  return (
+    <section style={{ position: "relative", minHeight: "60vh" }}>
+      <GradientMesh />
+      <GlowButton onClick={() => console.log("cta")}>Get started</GlowButton>
+    </section>
+  );
+}
+```
+
+## 2. Server page renders the wrapper
+
+```tsx
+// app/page.tsx — no "use client" needed here
+import HeroClient from "./components/HeroClient";
+
+export default function Page() {
+  return (
+    <main>
+      <HeroClient />
+    </main>
+  );
+}
+```
+
+## 3. Category CSS
+
+Import only the CSS for the categories you use, once, in the root layout — not per page:
+
+```tsx
+// app/layout.tsx
+import "@farzadbagheri/fb-components/buttons.css";
+import "@farzadbagheri/fb-components/backgrounds.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+If you prefer component-local CSS, importing the category CSS inside the `"use client"` wrapper also works — Next.js hoists it. Pick one strategy per category and stay consistent to avoid duplicate rule payloads.
+
+## 4. When "use client" is required
+
+| Situation | Needs `"use client"`? |
+| --- | --- |
+| Component uses event handlers (`onClick`, `onSubmit`) | Yes |
+| Component uses hooks (`useState`, context) internally | Yes (all FB interactive components do) |
+| You only compose already-wrapped client components | No — keep the page a Server Component |
+| Static/SSR-friendly usage (e.g. backgrounds with no props handlers) | Still yes at the import site; the wrapper pattern above covers it |
+
+Rule of thumb: pages stay server, wrappers stay client, and the boundary is exactly one file per interactive island.
 
 ---
 
