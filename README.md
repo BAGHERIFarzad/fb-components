@@ -1,4 +1,4 @@
-# FB Components
+﻿# FB Components
 
 > Production-minded React + TypeScript components for AI interfaces, motion, dashboards, data visualization, SaaS experiences, and modern product UI.
 
@@ -11,15 +11,15 @@
 
 FB Components is a modern component library for teams building polished React products. It combines expressive visuals with practical package architecture: typed APIs, category entry points, category-specific CSS, React 18/19 support, ESM/CommonJS builds, accessibility-aware patterns, and real consumer-install validation.
 
-**Current release:** `0.1.4`
+**Current release:** `0.1.5`
 
-**22 public components · React 18/19 · TypeScript · ESM/CJS · Category imports · Accessibility-aware**
+**22 public components Â· React 18/19 Â· TypeScript Â· ESM/CJS Â· Category imports Â· Accessibility-aware**
 
-[Live Components](https://farzadbagheri.fr/en/components) ·
-[npm](https://www.npmjs.com/package/@farzadbagheri/fb-components) ·
-[Component API](./COMPONENTS.md) ·
-[Examples](./EXAMPLES.md) ·
-[Why FB Components?](./WHY-FB-COMPONENTS.md) ·
+[Live Components](https://farzadbagheri.fr/en/components) Â·
+[npm](https://www.npmjs.com/package/@farzadbagheri/fb-components) Â·
+[Component API](./COMPONENTS.md) Â·
+[Examples](./EXAMPLES.md) Â·
+[Why FB Components?](./WHY-FB-COMPONENTS.md) Â·
 [Showcase](./SHOWCASE.md)
 
 ---
@@ -65,13 +65,13 @@ import "@farzadbagheri/fb-components/styles.css";
 
 Many UI libraries optimize either for visual impact or for production ergonomics. FB Components is built to do both.
 
-- **Production-minded** — typed APIs, package validation, predictable exports, and real consumer-install checks.
-- **TypeScript-first** — declarations ship with the package.
-- **Focused imports** — import JavaScript and CSS by category instead of loading the whole library.
-- **React 18 + 19** — designed for current React applications.
-- **Accessibility-aware** — native semantics, ARIA patterns, keyboard behavior, and accessibility-focused testing where appropriate.
-- **Product-oriented** — components for AI interfaces, dashboards, SaaS experiences, motion, data visualization, and landing pages.
-- **Framework-friendly** — works well with modern React tooling including Vite and Next.js.
+- **Production-minded** â€” typed APIs, package validation, predictable exports, and real consumer-install checks.
+- **TypeScript-first** â€” declarations ship with the package.
+- **Focused imports** â€” import JavaScript and CSS by category instead of loading the whole library.
+- **React 18 + 19** â€” designed for current React applications.
+- **Accessibility-aware** â€” native semantics, ARIA patterns, keyboard behavior, and accessibility-focused testing where appropriate.
+- **Product-oriented** â€” components for AI interfaces, dashboards, SaaS experiences, motion, data visualization, and landing pages.
+- **Framework-friendly** â€” works well with modern React tooling including Vite and Next.js.
 
 Read the full positioning guide: [WHY-FB-COMPONENTS.md](./WHY-FB-COMPONENTS.md)
 
@@ -242,7 +242,7 @@ export function AssistantInput() {
   return (
     <AiPromptBox
       placeholder="Ask anything..."
-      modelLabel="FB AI · Fast"
+      modelLabel="FB AI Â· Fast"
       onSubmit={() => undefined}
     />
   );
@@ -629,4 +629,5 @@ Live documentation:
 
 ## License
 
-MIT © Farzad Bagheri
+MIT Â© Farzad Bagheri
+
