@@ -6,6 +6,53 @@ The project follows Semantic Versioning.
 
 ---
 
+## [0.1.5] - 2026-09-19
+
+### Added
+
+- Added `WHY-FB-COMPONENTS.md` with project positioning, package philosophy, architecture principles, and adoption guidance.
+- Added `SHOWCASE.md` documenting the live component showcase and interactive documentation experience.
+- Added `ROADMAP.md` describing the public direction of FB Components and planned component, documentation, accessibility, and developer-experience improvements.
+- Added `SUPPORT.md` with clear guidance for bug reports, feature requests, security issues, documentation questions, and community support.
+- Added clearer contribution paths for new component proposals, documentation improvements, accessibility work, testing, and developer-experience enhancements.
+- Added live showcase, roadmap, support, examples, API documentation, and contribution links to the main project documentation.
+
+### Changed
+
+- Reworked the README for stronger npm and GitHub adoption with clearer positioning, installation guidance, category imports, framework compatibility, popular component examples, live showcase links, documentation discovery, and contribution calls to action.
+- Improved npm-facing documentation links so repository-only resources resolve correctly when viewed from the npm package page.
+- Improved package discoverability for React 18, React 19, TypeScript, Vite, Next.js, AI interfaces, motion, dashboards, data visualization, SaaS, and modern product UI.
+- Improved repository contributor onboarding with clearer issue categories and contribution opportunities.
+- Hardened the npm publishing workflow by replacing separate typecheck and build steps with the complete `npm run release:check` validation pipeline.
+- Publishing now validates tests, builds, declarations, package size, packed-package behavior, and fresh consumer installation before npm publication.
+- Improved release consistency by using the same validation pipeline locally and in the trusted GitHub Actions publishing workflow.
+
+### Quality
+
+- 23 test files passing.
+- 307 tests passing.
+- 100% function coverage across the measured public component set.
+- TypeScript typecheck passing.
+- ESM build passing.
+- CommonJS build passing.
+- TypeScript declaration generation passing.
+- Package-size guard passing.
+- Fresh React 19 consumer installation verification passing.
+- All 22 root component exports verified.
+- Category exports and CSS entry points verified from the packed package.
+
+### Package Validation
+
+Package validation remains within the configured limits:
+
+| Metric | Current | Limit |
+|---|---:|---:|
+| Packed size | 84.3 kB | 100 kB |
+| Unpacked size | 532.3 kB | 600 kB |
+| Files | 121 | 150 |
+
+---
+
 ## [0.1.4] - 2026-09-17
 
 ### Added
