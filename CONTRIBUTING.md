@@ -1,107 +1,191 @@
 # Contributing to FB Components
 
-Thank you for your interest in improving FB Components.
+Thank you for considering a contribution to FB Components.
 
-FB Components is a public React component library focused on modern product interfaces, motion, AI interfaces, data visualization, and reusable UI building blocks.
+FB Components is a production-minded React + TypeScript component library focused on modern product UI, AI interfaces, motion, dashboards, data visualization, SaaS experiences, and developer-friendly package architecture.
 
-## Before you start
+## Before You Start
 
-Please:
+Check the existing resources first:
 
-- search existing issues before opening a new one
-- keep changes focused and reasonably small
-- avoid unrelated refactors in feature or bug-fix pull requests
-- do not include secrets, credentials, tokens, private data, or proprietary code
-- preserve backward compatibility unless a breaking change is intentional and documented
+- Issues: https://github.com/BAGHERIFarzad/fb-components/issues
+- Roadmap: https://github.com/BAGHERIFarzad/fb-components/blob/main/ROADMAP.md
+- Support: https://github.com/BAGHERIFarzad/fb-components/blob/main/SUPPORT.md
+- Component API: https://github.com/BAGHERIFarzad/fb-components/blob/main/COMPONENTS.md
+- Examples: https://github.com/BAGHERIFarzad/fb-components/blob/main/EXAMPLES.md
+- Live showcase: https://farzadbagheri.fr/en/components
 
-## Development requirements
+If an issue already exists, use it as the source of truth. For a new component or larger feature, open a feature request before implementation.
 
-Recommended local environment:
+## Good First Contributions
 
-```text
-Node.js >= 18
-npm
-React 18 or 19 for consumer testing
-```
+Start with issues labeled `good first issue`, `documentation`, `accessibility`, `testing`, or `DX`.
 
-Clone and install:
+Read the dedicated guide:
+
+https://github.com/BAGHERIFarzad/fb-components/blob/main/GOOD_FIRST_CONTRIBUTION.md
+
+## Development Setup
+
+Requirements: Node.js 18+, npm, and Git.
 
 ```bash
 git clone https://github.com/BAGHERIFarzad/fb-components.git
 cd fb-components
 npm install
-```
-
-## Development commands
-
-```bash
-npm run typecheck
-npm run build
-npm run package:size
-npm run install-test
 npm run release:check
 ```
 
-All checks should pass before opening a pull request.
+Useful commands:
 
-## Adding a component
+```bash
+npm run typecheck
+npm test
+npm run test:coverage
+npm run build
+npm run package:size
+npm run install-test
+```
 
-1. Place it in the appropriate category under `src/`.
-2. Export it from that category's `index.ts`.
-3. Export it through the package root when appropriate.
-4. Include any required CSS in the category build path.
-5. Ensure TypeScript declarations build successfully.
-6. Add or update documentation.
-7. Run `npm run release:check`.
-8. Confirm the package-size guard and fresh install test pass.
+## Branch Workflow
 
-Do not add Pro-only source code to the public npm package.
+Do not work directly on `main`.
 
-## Public API changes
+```bash
+git switch main
+git fetch origin
+git reset --hard origin/main
+git switch -c <branch-name>
+```
 
-Changes to exports, props, category entry points, or CSS contracts are public API changes. Document user-visible changes in `CHANGELOG.md`.
+Recommended prefixes: `feat/`, `fix/`, `docs/`, `test/`, `refactor/`, `chore/`.
 
-## Commit messages
+Keep one pull request focused on one logical change.
+
+## Component Contribution Standards
+
+New public components should solve a reusable product-interface problem.
+
+A strong contribution should include:
+
+- clear use case
+- typed public API
+- React 18/19 compatibility
+- correct category exports
+- category-specific CSS where required
+- meaningful tests
+- accessibility considerations
+- reduced-motion handling when relevant
+- documentation and copy-paste examples
+- package-size awareness
+
+Avoid large runtime dependencies unless they provide clear value.
+
+## Public API Rules
+
+Use public category entry points in consumer-facing examples:
+
+```tsx
+import { GlowButton } from "@farzadbagheri/fb-components/buttons";
+import { GlassCard } from "@farzadbagheri/fb-components/ui";
+import { RadialProgress } from "@farzadbagheri/fb-components/data";
+```
+
+If public API changes, update exports, tests, `COMPONENTS.md`, examples where appropriate, and verify declaration generation and packed-package behavior.
+
+Do not use internal source imports in consumer documentation.
+
+## CSS Rules
+
+Prefer category CSS:
+
+```tsx
+import "@farzadbagheri/fb-components/buttons.css";
+```
+
+Full CSS remains available:
+
+```tsx
+import "@farzadbagheri/fb-components/styles.css";
+```
+
+Keep selectors scoped, avoid global resets, support reduced motion where appropriate, and preserve package-size limits.
+
+## Accessibility
+
+Review semantic HTML, accessible names, keyboard behavior, focus, ARIA, state communication, reduced motion, and color-independent feedback.
+
+Prefer native semantics over unnecessary ARIA.
+
+## Testing
+
+Run:
+
+```bash
+npm test
+npm run test:coverage
+```
+
+Tests should focus on observable behavior rather than implementation details.
+
+Do not add brittle tests solely to increase coverage.
+
+## Package Validation
+
+Before opening a PR:
+
+```bash
+npm run release:check
+```
+
+This validates TypeScript, tests, ESM/CJS builds, declarations, package-size limits, packed-package behavior, fresh consumer installation, and public exports.
+
+## Documentation
+
+Update docs when a change affects public APIs, installation, package entry points, CSS usage, accessibility, framework integration, examples, or release workflow.
+
+Keep examples copy-paste friendly and aligned with the real public API.
+
+## Commit Messages
 
 Examples:
 
 ```text
-feat: add animated status badge
-fix: correct radial progress animation
-docs: improve installation examples
-ci: add package validation
-refactor: simplify button exports
-chore: update dependencies
+feat: add skeleton component
+fix: preserve keyboard focus in toast
+docs: expand Next.js examples
+test: cover radial progress labels
+chore: improve package validation
 ```
 
-## Pull requests
+## Pull Requests
 
-A good pull request should:
+Before opening a PR:
 
-- explain the problem or goal
-- describe the implementation
-- mention public API changes
-- include screenshots or recordings for visible UI changes when useful
-- update documentation when behavior changes
-- update `CHANGELOG.md` when user-visible
-- pass all required CI checks
-
-Required checks:
-
-```text
-Typecheck and Build
-Package Size Guard
-Fresh Install Test
+```bash
+git status
+git diff --check
+npm run release:check
 ```
+
+A good PR explains what changed, why, the related issue, accessibility impact, API impact, and validation performed.
+
+Use `Closes #123` when the PR should close an issue.
+
+## Review Checklist
+
+Changes may be reviewed for correctness, API clarity, TypeScript quality, accessibility, test quality, package architecture, CSS isolation, documentation, package cost, and backward compatibility.
 
 ## Security
 
-Do not report sensitive vulnerabilities in a public issue. See [SECURITY.md](./SECURITY.md).
+Do not report vulnerabilities through public issues. Follow:
+
+https://github.com/BAGHERIFarzad/fb-components/blob/main/SECURITY.md
 
 ## Code of Conduct
 
-Participation is governed by [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md).
+https://github.com/BAGHERIFarzad/fb-components/blob/main/CODE_OF_CONDUCT.md
 
-## License
+## Thank You
 
-By contributing, you agree that your contributions may be distributed under the MIT License used by this project.
+Code, tests, documentation, accessibility feedback, bug reports, examples, and thoughtful feature proposals all help improve FB Components.
