@@ -6,6 +6,18 @@ The project follows Semantic Versioning.
 
 ---
 
+## 0.1.6
+
+### Added
+
+- `LivingWorldLanding`
+- 23 public React components
+
+### Improved
+
+- Fresh-install validation now verifies landing exports and `landing.css`
+- Reduced published package size by removing generated sourcemaps
+
 ## [0.1.5] - 2026-09-19
 
 ### Added
