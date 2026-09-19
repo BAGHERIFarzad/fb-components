@@ -47,8 +47,8 @@ Package validation remains within the configured limits:
 
 | Metric | Current | Limit |
 |---|---:|---:|
-| Packed size | 84.2 kB | 100 kB |
-| Unpacked size | 532.2 kB | 600 kB |
+| Packed size | 84.3 kB | 100 kB |
+| Unpacked size | 532.3 kB | 600 kB |
 | Files | 121 | 150 |
 
 ---

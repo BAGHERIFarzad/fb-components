@@ -1,4 +1,4 @@
-﻿# FB Components
+# FB Components
 
 > Production-minded React + TypeScript components for AI interfaces, motion, dashboards, data visualization, SaaS experiences, and modern product UI.
 
@@ -514,7 +514,7 @@ Current validated test suite:
 100% function coverage across the measured public component set
 ```
 
-Current package validation for `0.1.4`:
+Current package validation for `0.1.5`:
 
 | Metric | Current | Limit |
 | --- | ---: | ---: |
@@ -630,4 +630,3 @@ Live documentation:
 ## License
 
 MIT Â© Farzad Bagheri
-
