@@ -629,4 +629,4 @@ Live documentation:
 
 ## License
 
-MIT Â© Farzad Bagheri
+MIT © Farzad Bagheri
