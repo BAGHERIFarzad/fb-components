@@ -11,7 +11,7 @@
 
 FB Components is a modern component library for teams building polished React products. It combines expressive visuals with practical package architecture: typed APIs, category entry points, category-specific CSS, React 18/19 support, ESM/CommonJS builds, accessibility-aware patterns, and real consumer-install validation.
 
-**Current release:** `0.1.5`
+**Current release:** `0.1.6`
 
 **23 public components · React 18/19 · TypeScript · ESM/CJS · Category imports · Accessibility-aware**
 
