@@ -5,6 +5,14 @@ All notable changes to FB Components will be documented in this file.
 The project follows Semantic Versioning.
 
 ---
+## 0.1.7
+
+### Changed
+
+- Removed the hardcoded current-release version from the README.
+- Kept npm package/version information driven by the npm badge and package metadata.
+- Documentation maintenance release.
+
 
 ## 0.1.6
 
